@@ -12,8 +12,16 @@ def generate_dice_value(dice):
     return randrange(1,sides+1)
 
 @app.get("/")
-def read_root():
-    return {"Hello": "World"}
+def default_dice():
+    return {'id':0,'dice':'d6', 'value': generate_dice_value('d6'), 'links': [
+        {
+            'name': 'dice',
+            'link': '/dice',
+            'params': ['dice'],
+            'valid_values': valid_dice_values,
+            'example': '/dice?dice=d4,d6,d8'
+        }
+    ]}
 
 
 @app.get("/items/{item_id}")
