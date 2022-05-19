@@ -23,6 +23,11 @@ def default_dice():
         }
     ]}
 
+@app.get("/dice/")
+def no_dice_param():
+    return default_dice()
+
+
 @app.get("/dice/{dice}")
 def dice(dice):     
     dice = dice.split(',')   
@@ -33,4 +38,4 @@ def dice(dice):
             return {'error': 'Invalid dice detected: %s' % d}
         dice_set.append({'id':idx, 'dice': d, 'value': value})
     return {'dice_set': dice_set}
-
+    
