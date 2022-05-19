@@ -23,7 +23,14 @@ def default_dice():
         }
     ]}
 
+@app.get("/dice/{dice}")
+def dice(dice):     
+    dice = dice.split(',')   
+    dice_set=[]
+    for idx,d in enumerate(dice):
+        value = generate_dice_value(d)
+        if value == 'invalid':
+            return {'error': 'Invalid dice detected: %s' % d}
+        dice_set.append({'id':idx, 'dice': d, 'value': value})
+    return {'dice_set': dice_set}
 
-@app.get("/items/{item_id}")
-def read_item(item_id: int, q: Union[str, None] = None):
-    return {"item_id": item_id, "q": q}
