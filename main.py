@@ -23,13 +23,12 @@ def default_dice():
         }
     ]}
 
+
 @app.get("/dice/")
-def no_dice_param():
-    return default_dice()
-
-
 @app.get("/dice/{dice}")
-def dice(dice):     
+def dice(dice=None):   
+    if not dice:
+        return default_dice()  
     dice = dice.split(',')   
     dice_set=[]
     for idx,d in enumerate(dice):
