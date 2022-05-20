@@ -16,10 +16,10 @@ def default_dice():
     return {'id':0,'dice':'d6', 'value': generate_dice_value('d6'), 'links': [
         {
             'name': 'dice',
-            'link': '/dice',
-            'params': ['dice'],
+            'path': '/dice',
+            'path_params': ['dice'],
             'valid_values': valid_dice_values,
-            'example': '/dice?dice=d4,d6,d8'
+            'example': '/dice/d4,d6,d8'
         }
     ]}
 
