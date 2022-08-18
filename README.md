@@ -9,3 +9,11 @@ Install the required libraries whether in the host itself or in a virtual machin
 ```
 pip install -r requirements.txt
 ```
+
+# Test
+
+Run `pytest` to run tests
+
+```
+pytest
+```
