@@ -1,4 +1,4 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, HTTPException
 from random import randrange
 
 app = FastAPI()
@@ -41,6 +41,6 @@ def dice(dice=None):
     for idx, d in enumerate(dice):
         value = generate_dice_value(d)
         if value == "invalid":
-            return {"error": "Invalid dice detected: %s" % d}
+            raise HTTPException(status_code=500, detail="Invalid dice detected: %s" % d)
         dice_set.append({"id": idx, "dice": d, "value": value})
     return {"dice_set": dice_set}
