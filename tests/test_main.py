@@ -8,4 +8,4 @@ client = TestClient(app)
 def test_read_main():
     response = client.get("/")
     assert response.status_code == 200
-    assert "id" in response.json()
+    assert "id" and "dice" and "value" and "links" in response.json()
