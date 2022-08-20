@@ -11,5 +11,5 @@ def test_main():
     assert "id" and "dice" and "value" and "links" in response.json()
 
 def test_valid_dice():
-    response = client.get("/dice/d2,d4,d6,d8,d12,d20")
+    response = client.get("/dice/d4,d6,d8,d12,d20")
     assert response.status_code == 200
