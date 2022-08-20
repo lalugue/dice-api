@@ -10,6 +10,16 @@ Install the required libraries whether in the host itself or in a virtual machin
 pip install -r requirements.txt
 ```
 
+# Run
+
+Run the application with the following command:
+
+```
+uvicorn main:app --reload
+```
+
+To run without reloading after code changes, remove the `--reload` option
+
 # Test
 
 Run `pytest` to run tests
