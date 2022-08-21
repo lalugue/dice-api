@@ -13,3 +13,7 @@ def test_main():
 def test_valid_dice():
     response = client.get("/dice/d4,d6,d8,d12,d20")
     assert response.status_code == 200
+
+def test_invalid_dice():
+    response = client.get("/dice/d4,d5,d8,d12,d20")
+    assert response.status_code == 400
