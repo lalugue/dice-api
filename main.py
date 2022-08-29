@@ -1,4 +1,5 @@
 from fastapi import FastAPI, HTTPException
+from fastapi.responses import RedirectResponse
 from random import randrange
 
 app = FastAPI()
@@ -35,7 +36,7 @@ def default_dice():
 @app.get("/dice/{dice}")
 def dice(dice=None):
     if not dice:
-        return default_dice()
+        return RedirectResponse("/")
     dice = dice.split(",")
     dice_set = []
     for idx, d in enumerate(dice):
