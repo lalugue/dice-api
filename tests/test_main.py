@@ -16,12 +16,12 @@ def test_valid_dice():
 
 def test_invalid_dice():
     response = client.get("/dice/d4,d5,d8,d12,d20")
-    assert response.status_code == 400
+    assert response.status_code == 422
 
 def test_invalid_input():
     response = client.get("/dice/d4,d6,d8-d12,d20")
-    assert response.status_code == 400
+    assert response.status_code == 422
     response = client.get("/dice/d4,d6,")
-    assert response.status_code == 400
+    assert response.status_code == 422
     response = client.get("/dice/d4d6d8")
-    assert response.status_code == 400  
+    assert response.status_code == 422 
