@@ -2,7 +2,7 @@ from fastapi import FastAPI, HTTPException
 from fastapi.responses import RedirectResponse
 from random import randrange
 
-app = FastAPI()
+app = FastAPI(docs_url="/docs")
 
 valid_dice_values = ["d4", "d6", "d8", "d10", "d12", "d20"]
 
