@@ -33,7 +33,6 @@ def default_dice():
 
 
 @app.get("/dice/")
-@app.get("/dice/{dice}")
 def dice(dice=None):
     if not dice:
         return RedirectResponse("/")
