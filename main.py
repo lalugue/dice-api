@@ -23,10 +23,12 @@ def default_dice():
         "links": [
             {
                 "name": "dice",
-                "path": "/dice",
-                "path_params": ["dice"],
+                "href": "/dice",
+                "query_params": ["dice"],
                 "valid_values": valid_dice_values,
-                "example": "/dice/d4,d6,d8",
+                "example": "/dice/?dice=d4,d6,d8",
+                "type": "GET"
+            },
             }
         ],
     }
