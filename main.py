@@ -29,6 +29,10 @@ def default_dice():
                 "example": "/dice/?dice=d4,d6,d8",
                 "type": "GET"
             },
+            {
+                "name": "documentation",
+                "href": "/docs",
+                "type": "GET"
             }
         ],
     }
