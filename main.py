@@ -27,13 +27,9 @@ def default_dice():
                 "query_params": ["dice"],
                 "valid_values": valid_dice_values,
                 "example": "/dice/?dice=d4,d6,d8",
-                "type": "GET"
+                "type": "GET",
             },
-            {
-                "name": "documentation",
-                "href": "/docs",
-                "type": "GET"
-            }
+            {"name": "documentation", "href": "/docs", "type": "GET"},
         ],
     }
 
