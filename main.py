@@ -17,9 +17,7 @@ def generate_dice_value(dice):
 @app.get("/")
 def default_dice():
     return {
-        "id": 0,
-        "dice": "d6",
-        "value": generate_dice_value("d6"),
+        "dice_set": [{"id": 0, "dice": "d6", "value": generate_dice_value("d6")}],
         "links": [
             {
                 "name": "dice",
