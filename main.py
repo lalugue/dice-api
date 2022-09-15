@@ -41,6 +41,10 @@ def dice(dice=None):
     for idx, d in enumerate(dice):
         value = generate_dice_value(d)
         if value == "invalid":
-            raise HTTPException(status_code=422, detail="Invalid dice detected: %s" % d)
+            raise HTTPException(
+                status_code=422,
+                detail="Invalid dice detected: %s. Valid dice are: %s"
+                % (d, valid_dice_values),
+            )
         dice_set.append({"id": idx, "dice": d, "value": value})
     return {"dice_set": dice_set}
